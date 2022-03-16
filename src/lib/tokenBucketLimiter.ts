@@ -14,6 +14,11 @@ export class TokenBucketLimiter {
 
   // request to perform an operation that would consume a number of tokens
   requestConsumeTokens(tokenCount:number):boolean{
+    if(this.bucketCapacity < tokenCount){
+      return false;
+    }
+
+    this.bucketCapacity -= tokenCount
     return true
   }
 }

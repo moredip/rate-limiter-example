@@ -4,7 +4,9 @@
   "description": "An pedagogical rate limiter",
   "license": "PRIVATE",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "test": "jest src"
+  },
   "engines": {
     "node": ">=10"
   },
