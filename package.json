@@ -1,0 +1,26 @@
+{
+  "name": "rate-limiter",
+  "version": "1.0.0",
+  "description": "An pedagogical rate limiter",
+  "license": "PRIVATE",
+  "private": true,
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "load-test": "artillery run load_testing/basic.yml",
+    "test": "jest src"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "artillery": "^2.0.0-12",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.0.2"
+  }
+}
