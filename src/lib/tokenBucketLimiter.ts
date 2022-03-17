@@ -25,10 +25,7 @@ export class TokenBucketLimiter {
   }
 
   private refresh(){
-    const now = new Date();
-    const delta = now.getTime() - this._timeOfLastFill.getTime()
-
-    const newTokens = this.tokenRate/1000*delta
+    const newTokens = this.tokenRate/1000*(Date.now() - this._timeOfLastFill.getTime())
     this._tokenCount += newTokens
     this._timeOfLastFill = new Date()
   }
