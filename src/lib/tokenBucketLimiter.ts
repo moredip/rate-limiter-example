@@ -1,4 +1,6 @@
 // implements Token Bucket rate limiting algorithm: https://en.wikipedia.org/wiki/Token_bucket
+
+const DEFAULT_CAPACITY = 100
 export class TokenBucketLimiter {
   private bucketCapacity:number
   private tokenRate:number
@@ -6,7 +8,7 @@ export class TokenBucketLimiter {
   private _timeOfLastFill: Date
 
   constructor(capacity,fillRate){
-    this.bucketCapacity = capacity
+    this.bucketCapacity = capacity || DEFAULT_CAPACITY
     this.tokenRate = fillRate
     this._tokenCount = capacity
     this._timeOfLastFill = new Date()

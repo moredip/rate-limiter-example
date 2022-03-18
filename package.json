@@ -5,12 +5,15 @@
   "license": "PRIVATE",
   "private": true,
   "scripts": {
+    "start": "ts-node src/server.ts",
     "test": "jest src"
   },
   "engines": {
     "node": ">=10"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.3"
+  },
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "jest": "^27.5.1",
