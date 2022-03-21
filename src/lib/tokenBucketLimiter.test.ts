@@ -17,13 +17,10 @@ describe(TokenBucketLimiter, () => {
 
   test('bucket refills after running out of room', async () => {
     const limiter = new TokenBucketLimiter(10,5)
-
     limiter.requestConsumeTokens(9)
     while(limiter.requestConsumeTokens(1)){}
-
     await sleep(2000)
     const succeeded = limiter.requestConsumeTokens(5)
-
     expect(succeeded).toBe(true)
   });
 });
